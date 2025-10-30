@@ -1,0 +1,9 @@
+{
+  "id": "AskAI",
+  "name": "ASKAI",
+  "description": "Send a prompt to OpenAI and return the model output.",
+  "parameters": [
+    { "name": "prompt", "description": "Prompt text", "type": "string" }
+  ],
+  "result": { "type": "string" }
+}
