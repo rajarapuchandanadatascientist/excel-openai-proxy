@@ -92,38 +92,20 @@
 
 
 /**
- * Sends a prompt to your backend proxy which calls OpenAI.
  * @customfunction
  * @param {string} prompt
  * @returns {string}
  */
 export async function ASKAI(prompt) {
   try {
-    if (!prompt || !prompt.toString().trim()) return "Provide a prompt.";
-
-    // <-- Replace with the URL Vercel gives you after deploy
-    const url = "https://your-vercel-project.vercel.app/api/openai";
-
-    const resp = await fetch(url, {
+    const response = await fetch("https://excel-openai-proxy.vercel.app/api/openai", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ prompt })
     });
-
-    if (!resp.ok) {
-      const text = await resp.text();
-      throw new Error(`Server error ${resp.status}: ${text}`);
-    }
-
-    const j = await resp.json();
-    return j.answer ?? "No answer";
-  } catch (err) {
-    // Excel cells expect a value, return readable error text
-    return `Error: ${err.message}`;
+    const data = await response.json();
+    return data.answer;
+  } catch (e) {
+    return "Error: " + e.message;
   }
-}
-
-// Register (if your project uses automatic association, this may be optional)
-if (typeof CustomFunctions !== "undefined") {
-  CustomFunctions.associate("ASKAI", ASKAI);
 }
