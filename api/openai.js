@@ -19,7 +19,6 @@ export default async function handler(req, res) {
     });
 
     const data = await response.json();
-
     return res.status(200).json({ answer: data.choices[0].message.content });
   } catch (error) {
     return res.status(500).json({ error: error.message });
