@@ -98,7 +98,7 @@
  */
 export async function ASKAI(prompt) {
   try {
-    const response = await fetch("https://excel-openai-proxy.vercel.app/api/openai", {
+    const response = await fetch("https://excel-openai-proxy-six.vercel.app/api/openai", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ prompt })
