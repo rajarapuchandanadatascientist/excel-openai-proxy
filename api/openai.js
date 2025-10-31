@@ -15,7 +15,11 @@ export default async function handler(req, res) {
   }
 
   try {
-    const prompt = req.query.prompt || "What is the capital of France?";
+    const prompt = req.body.prompt;
+
+    if (!prompt) {
+      return res.status(400).json({ error: "Missing 'prompt' in request body" });
+    }
 
     // Check if API key is set
     if (!process.env.OPENAI_API_KEY) {
