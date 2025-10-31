@@ -2,23 +2,16 @@
     "allowCustomDataForDataTypeAny": true,
     "functions": [
         {
-            "description": "Gets the star count for a given Github repository.",
-            "id": "GETSTARCOUNT",
-            "name": "GETSTARCOUNT",
+            "id": "ASKAI",
+            "name": "ASKAI",
             "parameters": [
                 {
-                    "description": "string name of Github user or organization.",
-                    "name": "userName",
-                    "type": "string"
-                },
-                {
-                    "description": "string name of the Github repository.",
-                    "name": "repoName",
+                    "name": "prompt",
                     "type": "string"
                 }
             ],
             "result": {
-                "type": "number"
+                "type": "string"
             }
         }
     ]

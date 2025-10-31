@@ -6,7 +6,7 @@ const CustomFunctionsMetadataPlugin = require("custom-functions-metadata-plugin"
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const urlDev = "https://localhost:3000/";
-const urlProd = "https://www.contoso.com/"; // CHANGE THIS TO YOUR PRODUCTION DEPLOYMENT LOCATION
+const urlProd = "https://excel-openai-proxy-ekat.vercel.app/"; // Production deployment URL
 
 /* global require, module, process */
 
